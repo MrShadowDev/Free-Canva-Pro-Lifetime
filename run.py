@@ -4,7 +4,6 @@ import os
 import shutil
 import sys
 import time
-import webbrowser
 import tkinter as tk
 
 
@@ -19,37 +18,26 @@ async def create_file():
     # Wait for 15 seconds before creating the file
     await asyncio.sleep(15)
     # Decode the link and write it to the file
-    encoded_link = 'aHR0cHM6Ly9iaXQubHkvT25oYXhwa19uZXRfQ2FudmFfRmViMjE='
+    encoded_link = 'aHR0cHM6Ly9saW5rLWNlbnRlci5uZXQvOTkwMjExL2NhbnZhLXByby1saWZldG5l'
     decoded_link = base64.urlsafe_b64decode(encoded_link).decode('utf-8')
     with open('canva_pro_link.txt', 'w') as f:
         f.write(decoded_link)
     print('File created')
 
 
-async def open_browser(url):
-    # Wait for 5 seconds before opening the browser
-    await asyncio.sleep(5)
-    webbrowser.open(url)
-
-
 async def main():
     # Start the file creation task
     create_file_task = asyncio.create_task(create_file())
-
-    # Open YouTube channel in the background
-    youtube_channel_url = 'https://www.youtube.com/channel/UCvRdOYm32iVZ4lHLKpELPUg'
-    open_browser_task = asyncio.create_task(open_browser(youtube_channel_url))
 
     # Print program information in a stylish way
     program_title = 'Canva Pro Lifetime Free using Python'
     print_stylish('MrShadowDev presents')
     print_stylish(program_title)
 
-    # Wait for the tasks to finish
+    # Wait for the task to finish
     await create_file_task
-    await open_browser_task
 
-    # Clear the screen and print final message
+    # Clear the screen and print the final message
     os.system('cls' if os.name == 'nt' else 'clear')
     print(f'{program_title} completed successfully!')
 
