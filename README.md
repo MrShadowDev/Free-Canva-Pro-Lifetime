@@ -8,4 +8,4 @@
 - Wait for `120 seconds` until a new text file with the free Canva Pro link is created.
 - Open the link in your browser and enjoy Canva Pro for free!
 
-# Happy hacking!
+# Open NEW ISSUE If Link not Working
