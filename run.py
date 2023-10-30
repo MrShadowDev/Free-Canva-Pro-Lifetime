@@ -18,7 +18,7 @@ async def create_file():
     # Wait for 15 seconds before creating the file
     await asyncio.sleep(15)
     # Decode the link and write it to the file
-    encoded_link = 'aHR0cHM6Ly9saW5rLWNlbnRlci5uZXQvOTkwMjExL2NhbnZhLXByby1saWZldG5l'
+    encoded_link = 'aHR0cHM6Ly9saW5rLWh1Yi5uZXQvOTkwMjExL3dvcmtpbmctY2FudmEtcHJvLWludml0ZQ=='
     decoded_link = base64.urlsafe_b64decode(encoded_link).decode('utf-8')
     with open('canva_pro_link.txt', 'w') as f:
         f.write(decoded_link)
