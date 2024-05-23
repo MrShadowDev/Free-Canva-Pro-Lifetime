@@ -1,42 +1,31 @@
-import asyncio
 import base64
 import os
 import tkinter as tk
 
+def print_stylish(text):
+    print(text)
+
 def create_file():
     try:
-        # Decode the link
         encoded_link = 'aHR0cHM6Ly9wYXN0ZWJpbi5jb20veERnUDl5cEM='
         decoded_link = base64.urlsafe_b64decode(encoded_link).decode('utf-8')
         
-        # Get the user's home directory
-        user_home = os.path.expanduser("~")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        print(f'Script directory: {script_dir}')
         
-        # Create the 'CanvaPro' directory in the user's home directory
-        canva_pro_dir = os.path.join(user_home, 'CanvaPro')
+        canva_pro_dir = os.path.join(script_dir, 'CanvaPro')
         os.makedirs(canva_pro_dir, exist_ok=True)
         
-        # Create the 'canva_pro_link.txt' file in the 'CanvaPro' directory
         file_path = os.path.join(canva_pro_dir, 'canva_pro_link.txt')
         
-        # Write the decoded link to the file
         with open(file_path, 'w') as f:
             f.write(decoded_link)
         
         print('File created successfully.')
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f'Error creating the file: {e}')
-
-async def main():
-    # Print program information
-    program_title = 'Canva Pro Lifetime Free using Python'
-    print_stylish('MrShadowDev presents')
-    print_stylish(program_title)
-    
-    # Call the create_file function
-    create_file()
-    
-    print(f'{program_title} completed successfully!')
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -56,16 +45,13 @@ class Application(tk.Frame):
         self.quit_button.pack(pady=10)
 
     def start_program(self):
-        # Disable the 'Create File' button to prevent multiple file creation
         self.start_button.config(state='disabled')
-        # Call the create_file function
         create_file()
 
-if __name__ == '__main':
-    # Create the GUI window
+if __name__ == '__main__':
     root = tk.Tk()
     root.title('Canva Pro Lifetime Free using Python')
     app = Application(master=root)
-
-    # Run the GUI loop
     app.mainloop()
+
+print_stylish('Powered by MrSh4dow')
