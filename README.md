@@ -1,4 +1,4 @@
-# (🟢 WORKING) 
+# (🟡 ISSUES) 
 # Canva-Pro-Lifetime-Free
 # Use This Simple Python Script to Get Canva Pro For Free Lifetime. Unlock Canva Pro for Life!
 
